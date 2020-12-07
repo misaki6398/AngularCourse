@@ -1,0 +1,16 @@
+<div (click)="onClick($event,'div')">
+  <h3>$event</h3>
+  <div>
+    <button (click)="onClick($event,'button')">Button</button>
+  </div>
+  <div>
+    <a (click)="onClick2($event,'a')" href="https://www.google.com">Google</a>
+  </div>
+  <div>
+    <select (change)="onChange($event)">
+      <option value="01">JS</option>
+      <option value="02">TS</option>
+      <option value="03">NG</option>
+    </select>
+  </div>
+</div>

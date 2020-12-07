@@ -264,9 +264,151 @@
           }
         }
       }
+    },
+    "mod04": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/mod04",
+      "sourceRoot": "projects/mod04/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/mod04",
+            "index": "projects/mod04/src/index.html",
+            "main": "projects/mod04/src/main.ts",
+            "polyfills": "projects/mod04/src/polyfills.ts",
+            "tsConfig": "projects/mod04/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/mod04/src/favicon.ico",
+              "projects/mod04/src/assets"
+            ],
+            "styles": [
+              "projects/mod04/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/mod04/src/environments/environment.ts",
+                  "with": "projects/mod04/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mod04:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mod04:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mod04:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mod04/src/test.ts",
+            "polyfills": "projects/mod04/src/polyfills.ts",
+            "tsConfig": "projects/mod04/tsconfig.spec.json",
+            "karmaConfig": "projects/mod04/karma.conf.js",
+            "assets": [
+              "projects/mod04/src/favicon.ico",
+              "projects/mod04/src/assets"
+            ],
+            "styles": [
+              "projects/mod04/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mod04/tsconfig.app.json",
+              "projects/mod04/tsconfig.spec.json",
+              "projects/mod04/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/mod04/e2e/protractor.conf.js",
+            "devServerTarget": "mod04:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mod04:serve:production"
+            }
+          }
+        }
+      }
     }},
   "cli": {
     "analytics": false
   },
-  "defaultProject": "mod02"
+  "defaultProject": "mod04"
 }
