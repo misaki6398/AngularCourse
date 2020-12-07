@@ -1,3 +1,11 @@
 .center {
   text-align: center;
 }
+
+
+.inline {
+  display: inline;
+  >a {
+    padding: 0px 5px;
+  }
+}

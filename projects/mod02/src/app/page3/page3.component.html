@@ -1,0 +1,10 @@
+<div class="center">
+<h1>Welcome {{title}}</h1>
+<ul>
+  <li *ngFor="let picture of pictures">
+    {{picture.Subject}} - {{picture.Author}}
+    <br>
+    <img class="img-size" src="{{picture.Url}}" alt="{{picture.Subject}}">
+  </li>
+</ul>
+</div>
