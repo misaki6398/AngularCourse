@@ -3,12 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InTheBoxDirective } from './in-the-box.directive';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    InTheBoxDirective
+    AppComponent
   ],
   imports: [
     BrowserModule,
