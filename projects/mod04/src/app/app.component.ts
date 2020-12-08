@@ -9,8 +9,12 @@ import { Picture } from 'projects/mod04/src/app/picture';
 export class AppComponent {
 
   title = 'Property Binding';
+  mySearch = '';
+  isFoundText = false;
+  isNoTouch = false;
 
-
-
+  onTextChange(): void {
+    this.isNoTouch = true;
+  }
 
 }

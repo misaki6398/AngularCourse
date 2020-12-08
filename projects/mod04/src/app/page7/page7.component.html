@@ -1,0 +1,17 @@
+<div class="table">
+  <div class="row" *ngFor="let student of students; let i = index,let odd = odd" [ngClass]="{'yellow': odd}">
+    <div class="col">No. {{i+1}}</div>
+    <div class="col">{{student.Id}}</div>
+    <div class="col">{{student.Name}}</div>
+    <div class="col">
+      {{student.Birthday | date:"yyyy-MM-dd"}}
+    </div>
+    <div class="col">
+      <ng-container  [ngSwitch]="student.Birthday.getMonth()">
+        <span *ngSwitchCase="11" style="color:red">壽星</span>
+        <span *ngSwitchCase="0" style="color:blue">生日快到了</span>
+        <span *ngSwitchDefault>等~~~</span>
+      </ng-container>
+    </div>
+  </div>
+</div>

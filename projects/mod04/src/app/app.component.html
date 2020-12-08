@@ -6,6 +6,13 @@
     <li><a href='page3'>Page3</a></li>
     <li><a href='page4'>Page4</a></li>
     <li><a href='page5'>Page5</a></li>
+    <li><a href='page7'>Page7</a></li>
   </ul>
   <router-outlet></router-outlet>
+  <hr>
+  <app-page6 [(searchText)]="mySearch" (searchTextChange)="onTextChange()" #searchInput></app-page6>
+  <h3 [ngClass]="{'border-blue': searchInput.isFound, 'border-red': !searchInput.isFound}" *ngIf="isNoTouch">
+    <span *ngIf="searchInput.isFound; else notFound">Get it! {{mySearch}}</span>
+    <ng-template #notFound>Not Found! {{mySearch}}</ng-template>
+  </h3>
 </div>
