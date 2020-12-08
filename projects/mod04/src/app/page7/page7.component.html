@@ -7,7 +7,7 @@
       {{student.Birthday | date:"yyyy-MM-dd"}}
     </div>
     <div class="col">
-      <ng-container  [ngSwitch]="student.Birthday.getMonth()">
+      <ng-container [ngSwitch]="student.Birthday.getMonth()">
         <span *ngSwitchCase="11" style="color:red">壽星</span>
         <span *ngSwitchCase="0" style="color:blue">生日快到了</span>
         <span *ngSwitchDefault>等~~~</span>
