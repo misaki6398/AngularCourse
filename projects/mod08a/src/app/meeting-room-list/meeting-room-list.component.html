@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">會議室</div>
+    <div class="col-4">容納人數</div>
+    <div class="col-4">配備</div>
+  </div>
+  <div class="row" *ngFor="let meetingRoom of meetingRooms">
+    <div class="col-4">{{meetingRoom.name}}</div>
+    <div class="col-4">{{meetingRoom.size}}</div>
+    <div class="col-4">{{meetingRoom.projector?"projector、":""}}{{meetingRoom.TV?"TV":""}}</div>
+  </div>
+</div>
+
+
