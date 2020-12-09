@@ -1,0 +1,21 @@
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#ID</th>
+      <th>名稱</th>
+      <th>容納人數</th>
+      <th>提供設備</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let meetingRoom of service.meetingRooms;">
+      <td (click)="populateForm(meetingRoom)">{{meetingRoom.id}}</td>
+      <td (click)="populateForm(meetingRoom)">{{meetingRoom.name}}</td>
+      <td (click)="populateForm(meetingRoom)">{{meetingRoom.size}}</td>
+      <td (click)="populateForm(meetingRoom)">{{meetingRoom.projector?"投影機、":""}}{{meetingRoom.tv?"電視":""}}</td>
+      <td (click)="deleteRecord(meetingRoom)"><i class="far fa-trash-alt fa-lg text-danger"></i></td>
+    </tr>
+  </tbody>
+</table>
