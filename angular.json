@@ -1378,6 +1378,148 @@
           }
         }
       }
+    },
+    "mod10": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/mod10",
+      "sourceRoot": "projects/mod10/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/mod10",
+            "index": "projects/mod10/src/index.html",
+            "main": "projects/mod10/src/main.ts",
+            "polyfills": "projects/mod10/src/polyfills.ts",
+            "tsConfig": "projects/mod10/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/mod10/src/favicon.ico",
+              "projects/mod10/src/assets"
+            ],
+            "styles": [
+              "projects/mod10/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/mod10/src/environments/environment.ts",
+                  "with": "projects/mod10/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mod10:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mod10:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mod10:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mod10/src/test.ts",
+            "polyfills": "projects/mod10/src/polyfills.ts",
+            "tsConfig": "projects/mod10/tsconfig.spec.json",
+            "karmaConfig": "projects/mod10/karma.conf.js",
+            "assets": [
+              "projects/mod10/src/favicon.ico",
+              "projects/mod10/src/assets"
+            ],
+            "styles": [
+              "projects/mod10/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mod10/tsconfig.app.json",
+              "projects/mod10/tsconfig.spec.json",
+              "projects/mod10/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/mod10/e2e/protractor.conf.js",
+            "devServerTarget": "mod10:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mod10:serve:production"
+            }
+          }
+        }
+      }
     }},
   "cli": {
     "analytics": false
