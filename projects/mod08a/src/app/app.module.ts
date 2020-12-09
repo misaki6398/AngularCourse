@@ -1,3 +1,4 @@
+import { MeetingRoomService } from './meeting-room.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -12,7 +13,7 @@ import { MeetingRoomListComponent } from './meeting-room-list/meeting-room-list.
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [MeetingRoomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
