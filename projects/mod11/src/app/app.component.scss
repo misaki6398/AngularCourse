@@ -1,0 +1,25 @@
+.center {
+  text-align: center;
+}
+
+
+.inline {
+  display: flex;
+  justify-content: center;
+  list-style:none;
+  a {
+    padding: 0 15PX;
+  }
+}
+
+.border-blue {
+  border: solid 3px blue;
+  color: black;
+  background-color: yellow;
+}
+
+.border-red {
+  border: solid 3px red;
+  color: red;
+  background-color: white;
+}

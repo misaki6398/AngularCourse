@@ -1,0 +1,13 @@
+<div class="container jumbtron">
+  <h2 class="display-4 text-center">會議室預約
+    <div class="list-group" *ngFor="let meetingRoom of meetingRooms">
+      <a (click)="onSelect(meetingRoom.id)" class="list-group-item list-group-time-list list-group-item-action d-flex justify-content-between align-items-center size">{{meetingRoom.name}}
+        <div>
+          <span class="badge badge-pill badge-dark">{{meetingRoom.size}}</span>
+          <span class="badge badge-pill badge-secondary" *ngIf="meetingRoom.projector">投影機</span>
+          <span class="badge badge-pill badge-secondary" *ngIf="meetingRoom.TV">電視</span>
+        </div>
+      </a>
+    </div>
+  </h2>
+</div>

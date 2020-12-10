@@ -1,0 +1,16 @@
+<div class="center">
+  <h1>Welcome to {{title}}</h1>
+  <nav>
+    <ul class="nav nav-tabs">
+      <li class="nav-item" >
+        <a class="nav-link" routerLink="/booking" routerLinkActive="active">會議室預約</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/meetingroomapp" routerLinkActive="active">會議室基本資料</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="card">
+    <router-outlet></router-outlet>
+  </div>
+</div>

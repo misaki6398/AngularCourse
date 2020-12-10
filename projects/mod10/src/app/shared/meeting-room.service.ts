@@ -23,7 +23,7 @@ export class MeetingRoomService {
   }
 
   public getMeetingRoomsById(id) {
-    return this.httpClient.get<MeetingRoom[]>(`${this.rootUrl}${id}`);
+    return this.httpClient.get<MeetingRoom>(`${this.rootUrl}${id}`);
   }
 
   public postMeetingRoom() {

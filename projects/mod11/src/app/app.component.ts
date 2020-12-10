@@ -6,9 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mod10';
-}
-
-export class AppComponent2 {
-  title = 'mod10';
+  title = 'mod11';
 }

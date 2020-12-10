@@ -1,0 +1,5 @@
+<h4>
+  <span *ngIf="this.meetingRoom !== undefined" else IsNull>你成功預訂了 #{{this.id}} -- {{this.meetingRoom.name}}</span>
+  <span *ngIf="this.meetingRoom === undefined" else IsNull>{{this.id}} 不存在</span>
+</h4>
+<a class="btn btn-warning" routerLink="/booking"><i class="fa fa-arrow-lef"></i>回到前一頁</a>
